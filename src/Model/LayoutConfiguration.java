@@ -6,28 +6,39 @@ import java.util.List;
 public class LayoutConfiguration {
 	
 	List<DCCAccessory> DCCaccessories;
-	List<CBUSModule> CBUSModules;
+	List<CBUSProducer> CBUSProducers;
+	List<CBUSConsumer> CBUSConsumers;
 	
 	public LayoutConfiguration() {
 		DCCaccessories = new ArrayList<DCCAccessory>();
-		CBUSModules = new ArrayList<CBUSModule>();
+		CBUSProducers = new ArrayList<CBUSProducer>();
+		CBUSConsumers = new ArrayList<CBUSConsumer>();
+		
+		//Add the command station as CBUS producer
 	}
 	
-	public void addDCCDecoder() {
+	//does it really need a name?
+	public void addDCCDecoder(int address, String name, int cap) {
+		DCCaccessories.add(new DCCAccessory(address, name, cap));
+	}
+	
+	public void RemoveDCCDecoder(int number) {
+		DCCaccessories.remove(number);
+	}
+	
+	public void addCBUSProducer() {
 		
 	}
 	
-	public void RemoveDCCDecoder() {
+	public void removeCBUSProducer() {
 		
 	}
 	
-	public void addCBUSModule() {
+	public void addCBUSConsumer() {
 		
 	}
 	
-	public void removeCBUSModule() {
+	public void removeCBUSConsumer() {
 		
 	}
-	
-	
 }

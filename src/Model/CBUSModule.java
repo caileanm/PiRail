@@ -1,19 +1,14 @@
 package Model;
 
-public class CBUSModule {
+import java.util.List;
+
+public interface CBUSModule {
 	
-	boolean states[];
-	int address;
-	//events (producer or consumer or both)
+	public int getOutputs();
 	
-	public CBUSModule(int connections, int Address) {
-		states = new boolean[connections];
-		address = Address;
-	}
+	public int getAddress();
 	
-	public int getAddress() {
-		return address;
-	}
+	public void program(int event, int value);
 	
-	
+	//public List<int> getValues(int event);
 }
