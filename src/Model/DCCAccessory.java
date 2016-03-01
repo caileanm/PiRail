@@ -3,27 +3,29 @@ package Model;
 public class DCCAccessory implements DCCDecoder{
 	
 	int address;
+	int capacity;
 	String name;
+	//check whether array is needed for basic accessories
 	
-	public DCCAccessory(int Address, String Name) {
+	public DCCAccessory(int Address, String Name, int cap) {
 		address = Address;
 		name = Name;
+		capacity = cap;
 	}
 	
 	public int getAddress() {
 		return address;
 	}
 
-	@Override
 	public void setAddress(int Address) {
-		// TODO Auto-generated method stub
-		
+		address = Address;
 	}
-
-	@Override
+	
+	//not sure if these are needed
 	public void doFunction(int number, boolean setting) {
-		// TODO Auto-generated method stub
-		
+		if (number > capacity - 1) {
+			System.out.println("no such function");
+		}
 	}
 
 	@Override
