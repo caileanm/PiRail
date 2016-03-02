@@ -56,10 +56,71 @@ public class LayoutConfiguration {
 	}
 	
 	public void addCBUSConsumer(int cap, int node) {
-		CBUSProducers.add(new CBUSProducer(cap, node));
+		CBUSConsumers.add(new CBUSConsumer(cap, node));
 	}
 	
-	public void removeCBUSConsumer() {
-		
+	public void removeCBUSConsumer(int index) {
+		CBUSConsumers.remove(index);
 	}
+	
+	//Producers
+	
+	public int getProducerOutputs(int index) {
+		return CBUSProducers.get(index).getOutputs();
+	}
+	
+	public int getProducerAddress(int index) {
+		return CBUSProducers.get(index).getAddress();
+	}
+	
+	public void programProducer(int index, int event, int value) {
+		CBUSProducers.get(index).program(event, value);
+	}
+	
+	public void deprogramProducer(int index, int value) {
+		CBUSProducers.get(index).deprogram(value);
+	}
+	
+	public int getProducerEvent(int index, int key) {
+		return CBUSProducers.get(index).getEvent(key);
+	}
+	
+	public boolean getProducerState(int index, int output) {
+		return CBUSProducers.get(index).getState(output);
+	}
+	
+	public void changeProducerState(int index, int output, boolean setting) {
+		CBUSProducers.get(index).changeState(output, setting);
+	}
+	
+	//Consumers
+	
+	public int getConsumerOutputs(int index) {
+		return CBUSConsumers.get(index).getOutputs();
+	}
+	
+	public int getConsumerAddress(int index) {
+		return CBUSConsumers.get(index).getAddress();
+	}
+	
+	public void programConsumer(int index, int event, int value) {
+		CBUSConsumers.get(index).program(event, value);
+	}
+	
+	public void deprogramConsumer(int index, int value, int event) {
+		CBUSConsumers.get(index).deprogram(value, event);
+	}
+	
+	public ArrayList<Integer> getConsumerEvent(int index, int key) {
+		return CBUSConsumers.get(index).getEvents(key);
+	}
+	
+	public boolean getConsumerState(int index, int output) {
+		return CBUSConsumers.get(index).getState(output);
+	}
+	
+	public void changeConsumerState(int index, int output, boolean setting) {
+		CBUSConsumers.get(index).changeState(output, setting);
+	}
+	
 }
