@@ -14,8 +14,11 @@ public class LayoutConfiguration {
 		CBUSProducers = new ArrayList<CBUSProducer>();
 		CBUSConsumers = new ArrayList<CBUSConsumer>();
 		
-		//Add the command station as CBUS producer
+		//Add the command station as CBUS producer with node number 0
+		CBUSProducers.add(new CBUSProducer(128, 0));
 	}
+	
+	//DCC
 	
 	//does it really need a name?
 	public void addDCCDecoder(int address, String name, int cap) {
@@ -26,16 +29,34 @@ public class LayoutConfiguration {
 		DCCaccessories.remove(number);
 	}
 	
-	public void addCBUSProducer() {
-		
+	public int getAddress(int index) {
+		return DCCaccessories.get(index).getAddress();
 	}
 	
-	public void removeCBUSProducer() {
-		
+	public void setAddress(int index, int address) {
+		DCCaccessories.get(index).setAddress(address);
 	}
 	
-	public void addCBUSConsumer() {
-		
+	public void DCCFunction(int index, int function, boolean setting) {
+		DCCaccessories.get(index).doFunction(function, setting);
+	}
+	
+	public boolean getDCCfunction(int index, int function) {
+		return DCCaccessories.get(index).getFunction(function);
+	}
+	
+	//CBUS
+	
+	public void addCBUSProducer(int cap, int node) {
+		CBUSProducers.add(new CBUSProducer(cap, node));
+	}
+	
+	public void removeCBUSProducer(int index) {
+		CBUSProducers.remove(index);
+	}
+	
+	public void addCBUSConsumer(int cap, int node) {
+		CBUSProducers.add(new CBUSProducer(cap, node));
 	}
 	
 	public void removeCBUSConsumer() {

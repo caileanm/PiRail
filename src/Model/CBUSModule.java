@@ -1,7 +1,5 @@
 package Model;
 
-import java.util.List;
-
 public interface CBUSModule {
 	
 	public int getOutputs();
@@ -10,5 +8,7 @@ public interface CBUSModule {
 	
 	public void program(int event, int value);
 	
-	//public List<int> getValues(int event);
+	public boolean getState(int output);
+	
+	public void changeState(int output, boolean setting);
 }
