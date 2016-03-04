@@ -45,7 +45,8 @@ void loop() {
     Serial.println(address);
 
     Serial.println(data);
-    
+
+    //carry out command
     Command();
     
     input = "";
@@ -57,6 +58,7 @@ void loop() {
   scheduler.update();
 }
 
+//get input from Pi
 void serialEvent() {
 
   while (Serial.available()) {
@@ -68,6 +70,8 @@ void serialEvent() {
     StringComplete = true;
     }
   }
+
+  //parse data
   
   command = input.substring(0, 4);
   
@@ -78,34 +82,65 @@ void serialEvent() {
 
 void Command() {
   //Serial output there for testing purposes
-  
-  if (command == "dire") {
-    Serial.println("direction changed");
+
+  //set direction
+  if (command == "forw") {
+    scheduler.opsProgramCV(address, DCC_SHORT_ADDRESS, 29, 6);
+    Serial.println("forward");
   }
+  else if (command == "back") {
+    scheduler.opsProgramCV(address, DCC_SHORT_ADDRESS, 29, 7);
+    Serial.println("reverse");
+  }
+  //set speed
   else if (command == "spee") {
     if (scheduler.setSpeed128(address, DCC_SHORT_ADDRESS, data)) {
       Serial.println("Speed changed");
     }
   }
+  //set acceleration
   else if (command == "acce") {
-    Serial.println("Acceleration changed");
+    if (scheduler.opsProgramCV(address, DCC_SHORT_ADDRESS, 3, data)) {
+      Serial.println("Acceleration changed");
+    }
   }
+  //set deceleration
   else if (command == "dece") {
-    Serial.println("Deceleration changed");
+    if (scheduler.opsProgramCV(address, DCC_SHORT_ADDRESS, 4, data)) {
+      Serial.println("Deceleration changed");
+    }
   }
-  else if (command == "func") {
-    Serial.println("function changed");
+  //set functions
+  else if (command == "func" && data >= 0 && data < 5) {
+    Serial.println("functions changed");
+    scheduler.setFunctions0to4(address, DCC_SHORT_ADDRESS, data);
+  }
+  else if (command == "func" && data >= 5 && data < 9) {
+    Serial.println("functions changed");
+    scheduler.setFunctions5to8(address, DCC_SHORT_ADDRESS, data);
+    Serial.println("5 to 8");
+  }
+  else if (command == "func" && data >= 9 && data < 13) {
+    Serial.println("functions changed");
+    scheduler.setFunctions0to4(address, DCC_SHORT_ADDRESS, data);
+    Serial.println("9 to 12");
   }
   else if (command == "sadd") {
     Serial.println("Address set");
   }
+  //set accessory
   else if (command == "sacc") {
-    
-    Serial.println("Accessory set");
+    if (scheduler.setBasicAccessory(address, data)) {
+      Serial.println("Accessory set");
+    }
   }
+  //unset accessory
   else if (command == "uacc") {
-    Serial.println("Accessory unset");
+    if (scheduler.unsetBasicAccessory(address, data)) {
+      Serial.println("Accessory unset");
+    }
   }
+  //emergency stop
   else if (command == "stop") {
     if (scheduler.eStop()) {
       Serial.println("Emergency stop");
