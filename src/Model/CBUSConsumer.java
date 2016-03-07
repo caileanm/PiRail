@@ -10,13 +10,11 @@ public class CBUSConsumer implements CBUSModule{
 	//maps events to nodes
 	HashMap<Integer, ArrayList<Integer>> events;
 	int capacity;
-	int address;
 	boolean states[];
 	
-	public CBUSConsumer(int cap, int node) {
+	public CBUSConsumer(int cap) {
 		capacity = cap;
 		events = new HashMap<Integer, ArrayList<Integer>>(capacity);
-		address = node;
 		for (int i = 0; i < capacity; i++) {
 			states[i] = false;
 		}
@@ -24,10 +22,6 @@ public class CBUSConsumer implements CBUSModule{
 	
 	public int getOutputs() {
 		return capacity;
-	}
-
-	public int getAddress() {
-		return address;
 	}
 	
 	public void program(int event, int value) {

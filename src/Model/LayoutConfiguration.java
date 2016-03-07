@@ -55,8 +55,8 @@ public class LayoutConfiguration {
 		CBUSProducers.remove(index);
 	}
 	
-	public void addCBUSConsumer(int cap, int node) {
-		CBUSConsumers.add(new CBUSConsumer(cap, node));
+	public void addCBUSConsumer(int cap) {
+		CBUSConsumers.add(new CBUSConsumer(cap));
 	}
 	
 	public void removeCBUSConsumer(int index) {
@@ -97,10 +97,6 @@ public class LayoutConfiguration {
 	
 	public int getConsumerOutputs(int index) {
 		return CBUSConsumers.get(index).getOutputs();
-	}
-	
-	public int getConsumerAddress(int index) {
-		return CBUSConsumers.get(index).getAddress();
 	}
 	
 	public void programConsumer(int index, int event, int value) {
