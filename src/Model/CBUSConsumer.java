@@ -3,6 +3,8 @@ package Model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//needs some adjustments
+
 public class CBUSConsumer implements CBUSModule{
 	
 	//maps events to nodes

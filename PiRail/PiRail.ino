@@ -111,6 +111,7 @@ void Command() {
     }
   }
   //set functions
+  //fix this
   else if (command == "func" && data >= 0 && data < 5) {
     Serial.println("functions changed");
     scheduler.setFunctions0to4(address, DCC_SHORT_ADDRESS, data);
@@ -128,6 +129,7 @@ void Command() {
   else if (command == "sadd") {
     Serial.println("Address set");
   }
+  
   //set accessory
   else if (command == "sacc") {
     if (scheduler.setBasicAccessory(address, data)) {
