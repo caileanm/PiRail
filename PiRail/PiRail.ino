@@ -126,7 +126,8 @@ void Command() {
     scheduler.setFunctions0to4(address, DCC_SHORT_ADDRESS, data);
     Serial.println("9 to 12");
   }
-  else if (command == "sadd") {
+  else if (command == "addr") {
+    scheduler.opsProgramCV(address, DCC_SHORT_ADDRESS, 1, data);
     Serial.println("Address set");
   }
   

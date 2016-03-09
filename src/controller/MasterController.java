@@ -9,11 +9,18 @@ public class MasterController {
 	
 	trainController cab;
 	LayoutController controlPanel;
-	
+	DCCSerialCom Arduino;
+	CBUSCom CAN;
 	
 	public MasterController() {
-		cab = new trainController();
-		controlPanel = new LayoutController();
+		//Communication stuff here
+		Arduino = new DCCSerialCom();
+		Arduino.init();
+		
+		CAN = new CBUSCom();
+		
+		cab = new trainController(Arduino);
+		controlPanel = new LayoutController(Arduino, CAN);
 	}
 	
 }

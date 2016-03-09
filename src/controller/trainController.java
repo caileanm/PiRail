@@ -12,17 +12,11 @@ import java.io.PrintWriter;
 public class trainController {
 	
 	StockConfiguration currentTrains;
-	String serial;
-	int serialSpeed;
+	DCCSerialCom Arduino;
 	
-	public trainController() {
+	public trainController(DCCSerialCom connection) {
 		currentTrains = new StockConfiguration();
-		serial = "/dev/ttyACM0";
-		serialSpeed = 9600;
-		
-		//initialise serial connection
-		
-		
+		Arduino = connection;
 	}
 	
 	public void saveConfiguration() throws IOException {
