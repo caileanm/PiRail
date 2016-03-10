@@ -1,13 +1,23 @@
 package controller;
 
+/*
+ * The following class sets up and handles communication between the java program and
+ * the CAN hardware, via the accompanying Arduino CBUS library. Rather than creating
+ * a conventional Arduin program, the java program interfaces directly with the library
+ * functions.
+ */
+
 public class CBUSCom {
 	
-	//CAN library from ...
+	//CAN library from Cooking Hacks
+	//deal with pointers
+	public native boolean begin(int speed);
+	public native char getMessage();
+	public native char sendMessage();
 	
-	public native void loop();
 	
 	public CBUSCom() {
-		System.loadLibrary("CBUS");
+		//System.loadLibrary("arduinoCAN");
 	}
 	
 	

@@ -1,6 +1,10 @@
 package controller;
 
+import java.io.IOException;
+
 import gnu.io.NoSuchPortException;
+import gnu.io.PortInUseException;
+import gnu.io.UnsupportedCommOperationException;
 
 /*
  * The following class interfaces directly with the hardware while
@@ -14,7 +18,7 @@ public class MasterController {
 	DCCSerialCom Arduino;
 	CBUSCom CAN;
 	
-	public MasterController() throws NoSuchPortException {
+	public MasterController() throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException {
 		//Communication stuff here
 		Arduino = new DCCSerialCom();
 		Arduino.init();
@@ -23,6 +27,9 @@ public class MasterController {
 		
 		cab = new trainController(Arduino);
 		controlPanel = new LayoutController(Arduino, CAN);
+		
+		//for testing
+		cab.sendCommand("spee 44 20");
 	}
 	
 }

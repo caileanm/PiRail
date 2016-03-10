@@ -47,8 +47,12 @@ public class trainController {
 		System.out.println("File Loaded");
 	}
 	
-	public void sendCommand() {
-		
+	public void sendCommand(String command) {
+		try {
+			Arduino.send(command);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }

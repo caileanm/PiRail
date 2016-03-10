@@ -149,5 +149,7 @@ void Command() {
       Serial.println("Emergency stop");
     }
   }
-  
+  else {
+    Serial.println("unknown command");
+  }
 }
