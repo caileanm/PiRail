@@ -1,5 +1,7 @@
 package controller;
 
+import gnu.io.NoSuchPortException;
+
 /*
  * The following class interfaces directly with the hardware while
  * containing the controller classes for the trains and layout.
@@ -12,7 +14,7 @@ public class MasterController {
 	DCCSerialCom Arduino;
 	CBUSCom CAN;
 	
-	public MasterController() {
+	public MasterController() throws NoSuchPortException {
 		//Communication stuff here
 		Arduino = new DCCSerialCom();
 		Arduino.init();
