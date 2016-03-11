@@ -38,4 +38,12 @@ public class DCCAccessory implements DCCDecoder{
 		return set[number];
 	}
 
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public String getName() {
+		return name;
+	}
+
 }

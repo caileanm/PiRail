@@ -20,6 +20,10 @@ public class LayoutConfiguration {
 	
 	//DCC
 	
+	public List<DCCAccessory> getDCCAccessories() {
+		return DCCaccessories;
+	}
+	
 	//does it really need a name?
 	public void addDCCDecoder(int address, String name, int cap) {
 		DCCaccessories.add(new DCCAccessory(address, name, cap));

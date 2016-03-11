@@ -10,6 +10,7 @@ package controller;
  */
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 import gnu.io.CommPort;
@@ -21,7 +22,12 @@ import gnu.io.UnsupportedCommOperationException;
 
 public class DCCSerialCom {
 	
+	//should probably add two way communication for testing purposes
+	
 	OutputStream out;
+	
+	//for testing only
+	InputStream in;
 	
 	public void init() throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException {
 		
@@ -32,11 +38,13 @@ public class DCCSerialCom {
 	    CommPort commPort = Identifier.open(this.getClass().getName(), 2000);
 	    
 	    if( commPort instanceof SerialPort ) {
-	    	SerialPort serialPort = ( SerialPort )commPort;
+	    	SerialPort serialPort = (SerialPort)commPort;
 	    	
 	    	serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE );
 	    	
 	    	out = serialPort.getOutputStream();
+	    	//for testing
+	    	in = serialPort.getInputStream();
 	    }
 	}
 	
@@ -49,7 +57,7 @@ public class DCCSerialCom {
 		for (int i = 0; i < command.length(); i++) {
 			out.write(command.charAt(i));
 		}
-		
+		System.out.println(in.read());
 	}
 	
 }

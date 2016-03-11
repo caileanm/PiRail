@@ -25,7 +25,7 @@ public class trainController {
 		for (int i = 0; i < currentTrains.getLocos().size(); i++) {
 			pw.write(currentTrains.getLocos().get(i).getAddress() + " " + 
 					currentTrains.getLocos().get(i).getName() + " " + 
-					currentTrains.getLocos().get(i).getImage());
+					currentTrains.getLocos().get(i).getImage() + "\n");
 		}
 		pw.close();
 		

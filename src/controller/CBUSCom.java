@@ -3,7 +3,7 @@ package controller;
 /*
  * The following class sets up and handles communication between the java program and
  * the CAN hardware, via the accompanying Arduino CBUS library. Rather than creating
- * a conventional Arduin program, the java program interfaces directly with the library
+ * a conventional Arduino program, the java program interfaces directly with the library
  * functions.
  */
 
