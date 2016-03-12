@@ -21,7 +21,6 @@ public class MasterController {
 	public MasterController() throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException {
 		//Communication stuff here
 		Arduino = new DCCSerialCom();
-		Arduino.init();
 		
 		CAN = new CBUSCom();
 		

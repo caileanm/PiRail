@@ -16,9 +16,44 @@
 
 	<div class="tab-content">
 		<div id="cab" class="tab active">
-			<p>Train Control goes here</p>
+			<p>Speed: </p>
+			<p>Address: </p>
 			
-			<input type="range"  min="0" max="128"/>
+			<div id="display">
+                <input type="text" id="val" readonly>
+            </div>
+			
+			<p>
+				<button type="button"><</button>
+				<button type="button" class="direction active">></button>
+			</p>
+				
+			<p>
+				<button type="button">address</button>
+				<button type="button">acceleration</button>
+				<button type="button">deceleration</button>
+				<button type="button">function</button>
+			</p>
+			
+			<br>
+                <input type="button" id="seven" value="7">
+                <input type="button" id="eight" value="8">
+                <input type="button" id="nine" value="9">
+                </br>
+                <br>
+                <input type="button" id="four" value="4">
+                <input type="button" id="five" value="5">
+                <input type="button" id="six" value="6">
+                </br>
+                <br>
+                <input type="button" id="one" value="1">
+                <input type="button" id="two" value="2">
+                <input type="button" id="three" value="3">
+                </br>
+			
+			<p>
+			
+			<input type="range"  min="0" max="128" value="0"/>
 			
 			<button type="button">STOP</button>
 			

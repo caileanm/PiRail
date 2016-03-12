@@ -34,11 +34,17 @@ void setup() {
   Serial.begin(9600);
   
   scheduler.setup();
+
+  //for testing only
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
 }
 
 void loop() {
   
   if (StringComplete) {
+
+    digitalWrite(13, LOW);
 
     Serial.println(command);
 
@@ -96,6 +102,9 @@ void Command() {
   else if (command == "spee") {
     if (scheduler.setSpeed128(address, DCC_SHORT_ADDRESS, data)) {
       Serial.println("Speed changed");
+
+      //for testing
+      digitalWrite(13, HIGH);
     }
   }
   //set acceleration
@@ -150,6 +159,6 @@ void Command() {
     }
   }
   else {
-    Serial.println("unknown command");
+    Serial.println("unknown command"); 
   }
 }
