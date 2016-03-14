@@ -37,14 +37,14 @@ void setup() {
 
   //for testing only
   pinMode(13, OUTPUT);
-  digitalWrite(13, HIGH);
+  digitalWrite(13, LOW);
 }
 
 void loop() {
   
   if (StringComplete) {
 
-    digitalWrite(13, LOW);
+    //digitalWrite(13, HIGH);
 
     Serial.println(command);
 
@@ -71,6 +71,8 @@ void serialEvent() {
     char in = (char)Serial.read();
     
     input += in;
+
+    Serial.println(input);
     
     if (in == '\n') {
     StringComplete = true;

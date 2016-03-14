@@ -23,13 +23,8 @@ import gnu.io.UnsupportedCommOperationException;
 
 public class DCCSerialCom {
 	
-	//should probably add two way communication for testing purposes
-	
 	OutputStream out;
 	SerialPort serialPort;
-	
-	//for testing only
-	InputStream in;
 	
 	public DCCSerialCom() throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException {
 		
@@ -45,20 +40,17 @@ public class DCCSerialCom {
 	    	serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE );
 	    	
 	    	out = serialPort.getOutputStream();
-	    	//for testing
-	    	in = serialPort.getInputStream();
 	    }
 	}
 	
 	public void send(String command) throws IOException {
 		
-		command += "\n";
+		command += '\n';
 		
-		System.out.println(command);
+		System.out.print(command);
+		//Prints out what the command should be ("spee 44 20")
 		
-		for (int i = 0; i < command.length(); i++) {
-			out.write(command.charAt(i));
-		}
+		out.write(command.getBytes());
 		
 	}
 	
