@@ -64,6 +64,11 @@ function controller() {
 			view.showCurrentValue(model.getValue());
 		});
 		
+		view.setSpeedChangeCallback(function () {
+			model.setSpeed(getElementById("myText").value);
+			view.showCurrentSpeed(model.getSpeed());
+		});
+		
 	};
 	
 }

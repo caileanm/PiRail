@@ -18,6 +18,10 @@ function PiRailView() {
         textvalue.value = value;
     };
 	
+	this.showCurrentSpeed = function (value) {
+		document.getElementById("speedDisplay").value = value;
+	}
+	
 	this.setOneClickCallback = function (callback) {
         oneButton.addEventListener("click", callback);
     };
@@ -64,5 +68,9 @@ function PiRailView() {
 	
 	this.setClearClickCallback = function (callback) {
         clearButton.addEventListener("click", callback);
+    };
+	
+	this.setSpeedChangeCallback = function (callback) {
+        clearButton.addEventListener("change", callback);
     };
 }

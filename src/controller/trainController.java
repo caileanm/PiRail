@@ -48,11 +48,7 @@ public class trainController {
 	}
 	
 	public void sendCommand(String command) {
-		try {
-			Arduino.send(command);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		Arduino.send(command);
 	}
 	
 }

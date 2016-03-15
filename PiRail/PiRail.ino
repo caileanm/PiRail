@@ -36,8 +36,8 @@ void setup() {
   scheduler.setup();
 
   //for testing only
-  pinMode(13, OUTPUT);
-  digitalWrite(13, LOW);
+  //pinMode(13, OUTPUT);
+  //digitalWrite(13, LOW);
 }
 
 void loop() {
@@ -106,7 +106,7 @@ void Command() {
       Serial.println("Speed changed");
 
       //for testing
-      digitalWrite(13, HIGH);
+      //digitalWrite(13, HIGH);
     }
   }
   //set acceleration

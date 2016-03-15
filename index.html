@@ -15,59 +15,57 @@
 	</ul>
 
 	<div class="tab-content">
-		<div id="cab" class="tab active">
-			<p>Speed: </p>
+		<div id="cab" class="tabContent">
+			<p>Speed: 
+				<input type="text" id="speedDisplay" class="info speed" readonly>
+			</p>
 			<p>Address: </p>
 			
+			
+			
 			<div id="display">
-                <input type="text" id="val" readonly>
-				<button type="button" id="clear">clear</button>
-				<button type="button" id="enter">enter</button>
+                <input type="text" id="val" class="value" readonly>
+				<input type="button" id="clear">clear</button>
+				<input type="button" id="enter">enter</button>
             </div>
 			
-			<p>
-				<button type="button" id="backwards"><</button>
-				<button type="button" id="forwards" class="direction active">></button>
-			</p>
-			
 			<br>
-				<input type="button" id="address">address</button>
-                <input type="button" id="seven" value="7">
-                <input type="button" id="eight" value="8">
-                <input type="button" id="nine" value="9">
+				<input type="button" id="address" class="button extra address" value="address"></button>
+                <input type="button" id="seven" class="number" value="7">
+                <input type="button" id="eight" class="number" value="8">
+                <input type="button" id="nine" class="number" value="9">
             </br>
             <br>
-				<input type="button" id="acceleration">acceleration</button>
-                <input type="button" id="four" value="4">
-                <input type="button" id="five" value="5">
-                <input type="button" id="six" value="6">
+				<input type="button" id="acceleration" class="button extra deceleration" value="acceleration"></button>
+                <input type="button" id="four" class="number" value="4">
+                <input type="button" id="five" class="number" value="5">
+                <input type="button" id="six" class="number" value="6">
             </br>
             <br>
-				<input type="button" id="deceleration">deceleration</button>
-                <input type="button" id="one" value="1">
-                <input type="button" id="two" value="2">
-                <input type="button" id="three" value="3">
+				<input type="button" id="deceleration" class="button extra deceleration" value="deceleration"></button>
+                <input type="button" id="one" class="number" value="1">
+                <input type="button" id="two" class="number" value="2">
+                <input type="button" id="three" class="number" value="3">
             </br>
 			<br>
-				<input type="button" id="function">function</button>
-				<input type="button" id="backwards"><</button>
-				<input type="button" id="zero" value="0">
+				<input type="button" id="function" class="button extra function" value="function"></button>
+				<input type="button" id="backwards" value="<"></button>
+				<input type="button" id="zero" class="number" value="0">
 				<button type="button" id="forwards" class="direction active">></button>
 			</br>
 			
-			<input type="range"  min="0" max="128" value="0" />
+			<input type="range" id="speed"  min="0" max="128" value="0" />
 			
-			<button type="button">STOP</button>
+			<button type="button" class="button stop">STOP</button>
 			
 		</div>
 		
-		<div id="panel" class="tab">
+		<div id="panel" class="tabContent">
 			<p>Layout Control goes here</p>
-			
 		</div>
 	</div>
 	
-	<div class="CBUS feed">
+	<div class="CBUSfeed">
 		<p>CBUS events feed</p>
 	</div>
 

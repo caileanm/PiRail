@@ -17,7 +17,7 @@ public class CBUSCom {
 	
 	
 	public CBUSCom() {
-		System.loadLibrary("arduinoCAN");
+		//System.loadLibrary("arduinoCAN");
 	}
 	
 	

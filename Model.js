@@ -9,6 +9,10 @@ function Model() {
         return value;
     };
 	
+	this.getSpeed = function () {
+		return speed;
+	};
+	
 	this.setValue = function (digit) {
         if (value == "0") {
             value = digit;
@@ -16,6 +20,10 @@ function Model() {
             value = "" + value + digit;
         }
     };
+	
+	this.setSpeed = function (digit) {
+		speed = digit;
+	}
 	
 	this.clear = function () {
 		value = "0";
