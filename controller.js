@@ -64,9 +64,22 @@ function controller() {
 			view.showCurrentValue(model.getValue());
 		});
 		
-		view.setSpeedChangeCallback(function () {
-			model.setSpeed(getElementById("myText").value);
-			view.showCurrentSpeed(model.getSpeed());
+		//for tabs
+		jQuery(document).ready(function() {
+			
+			//set function for clicking on tabs
+			jQuery('.tab-links a').on('click', function(e)  {
+				
+				var currentTab = jQuery(this).attr('href');
+				
+				//show and hide tabs
+				jQuery('.tabs ' + currentTab).show().siblings().hide();
+				
+				//change active tabs
+				jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+				
+			});
+			
 		});
 		
 	};

@@ -1,86 +1,44 @@
-.html {
-	height: 100%;
-	width: 100%;
-}
-
 .tabs {
-    width:100%;
-    display:inline-block;
+    position: relative;   
+    min-height: 500px; 
+    clear: both;
+    margin: 25px 0;
 }
-
-.tab-links:after {
-        display:block;
-        clear:both;
-        content:'';
-}
-
-/*changes position*/
-.tab-links li {
-        margin:0px 5px;
-        float:left;
-        list-style:none;
-}
-
-/*Colours the tabs and some box stuff*/
-.tab-links a {
-            padding:9px 15px;
-            display:inline-block;
-            border-radius:3px 3px 0px 0px;
-            background:#7FB5DA;
-            font-size:16px;
-            font-weight:600;
-            color:#4c4c4c;
-            transition:all linear 0.15s;
-}
-
-/*title self explanatory. Change this stuff. Box is not needed.*/
-.tab-content {
-		padding:15px;
-        border-radius:3px;
-        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-        background:#fff;
-		background-color: lightblue;
-}
-
-/*After this point I actually know what I'm doing*/
-
-.value {
-	border:2px solid #456879;
-	border-radius:10px;
-	height: 22px;
-	width: 230px;
-}
-
-.button {
-	text-align: center;
-	border: 2px solid;
-	border-radius: 2px;
-	border-color: white;
-}
-
+	
 .tab {
-    display:none;
+    float: left;
 }
-
-.tab.active {
-    display:block;
+	
+.tab label {
+    background: #eee; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    margin-left: -1px; 
+    position: relative;
+    left: 1px; 
 }
-
-.extra {
-	padding: 10px 32px;
-	font-size: 16px;
-	width: 170px;
-	height: 40px;
+	
+.tab [type=radio] {
+    display: none;   
 }
-
-.number {
-	font-size: 16px;
-	color: white;
-	background-color: black;
-	height: 40px;
-	width: 40px;
+	
+.content {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: white;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    border: 1px solid #ccc; 
 }
-
-.stop {
-	background-color: red;
+	
+[type=radio]:checked ~ label {
+    background: white;
+    border-bottom: 1px solid white;
+    z-index: 2;
+}
+	
+[type=radio]:checked ~ label ~ .content {
+    z-index: 1;
 }

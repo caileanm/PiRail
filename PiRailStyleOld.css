@@ -1,0 +1,105 @@
+.html {
+	height: 100%;
+	width: 100%;
+}
+
+.body { 
+	font-size: 80%; 
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+}
+
+/*Everything below here is ok as it is*/
+
+
+
+
+
+/*Remove contradictions above this point*/
+
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.tab-links li {
+    margin:0px 5px;
+    float:left;
+    list-style:none;
+}
+
+/*stuff around the tabs*/
+.tab-links a {
+    padding:9px 15px;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    background:#7FB5DA;
+    font-size:16px;
+    font-weight:600;
+    color:#4c4c4c;
+    transition:all linear 0.15s;
+}
+
+/*For the general content*/
+.tab-content {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+
+/*Display or not*/
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+.value {
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;
+	text-align: center;
+}
+
+.button {
+	text-align: center;
+	border: 2px solid;
+	border-radius: 2px;
+	border-color: white;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+.extra {
+	padding: 10px 32px;
+	font-size: 16px;
+	width: 170px;
+	height: 40px;
+}
+
+.info {
+	background-color: lightblue;
+	border: 0px;
+	text-align: left;
+}
+
+.number {
+	font-size: 16px;
+	color: white;
+	background-color: black;
+	height: 40px;
+	width: 40px;
+}
+
+.stop {
+	background-color: red;
+}

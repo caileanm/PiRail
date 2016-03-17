@@ -21,10 +21,6 @@ function Model() {
         }
     };
 	
-	this.setSpeed = function (digit) {
-		speed = digit;
-	}
-	
 	this.clear = function () {
 		value = "0";
 	}

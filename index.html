@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <meta charset="UTF-8">
-        <title>PiRail</title>
-        <link rel="stylesheet" type="text/css" href="PiRailStyle.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    </head>
+
+<head>
+	<meta charset='UTF-8'>
+	<title>PiRail</title>
+	<link rel="stylesheet" type="text/css" href="PiRailStyle.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
 
 <body>
-	
-	<ul class="tab-links">
-		<li class="active"><a href="#cab">Cab</a></li>
-		<li><a href="#panel">Panel</a></li>
-	</ul>
-
-	<div class="tab-content">
-		<div id="cab" class="tabContent">
-			<p>Speed: 
+		
+    <div class="tabs">
+        
+       <div class="tab">
+           <input type="radio" id="Cab" name="tab-group-1" checked>
+           <label for="Cab">Cab</label>
+           
+           <div class="content">
+               <p>Speed: 
 				<input type="text" id="speedDisplay" class="info speed" readonly>
 			</p>
-			<p>Address: </p>
-			
-			
+			<p>Address: 
+				<input type="text" id="AddressDisplay" class="info address" readonly>
+			</p>
 			
 			<div id="display">
                 <input type="text" id="val" class="value" readonly>
@@ -57,18 +58,24 @@
 			<input type="range" id="speed"  min="0" max="128" value="0" />
 			
 			<button type="button" class="button stop">STOP</button>
-			
-		</div>
-		
-		<div id="panel" class="tabContent">
-			<p>Layout Control goes here</p>
-		</div>
-	</div>
+           </div> 
+       </div>
+        
+       <div class="tab">
+           <input type="radio" id="Panel" name="tab-group-1">
+           <label for="Panel">Panel</label>
+           
+           <div class="content">
+               <p>Layout Control goes here</p>
+           </div> 
+       </div>
+        
+    </div>
 	
 	<div class="CBUSfeed">
 		<p>CBUS events feed</p>
 	</div>
-
+	
 </body>
 
 <script src="Model.js"></script>
