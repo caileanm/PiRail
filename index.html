@@ -17,18 +17,16 @@
            <label for="Cab">Cab</label>
            
            <div class="content">
-               <p>Speed: 
-				<input type="text" id="speedDisplay" class="info speed" readonly>
-			</p>
-			<p>Address: 
-				<input type="text" id="AddressDisplay" class="info address" readonly>
-			</p>
 			
+			<div class="keypad">
 			<div id="display">
                 <input type="text" id="val" class="value" readonly>
-				<input type="button" id="clear">clear</button>
-				<input type="button" id="enter">enter</button>
             </div>
+			
+			<br>
+				<input type="button" class="displaybutton" id="clear">clear</button>
+				<input type="button" class="displaybutton" id="enter">enter</button>
+			</br>
 			
 			<br>
 				<input type="button" id="address" class="button extra address" value="address"></button>
@@ -50,15 +48,38 @@
             </br>
 			<br>
 				<input type="button" id="function" class="button extra function" value="function"></button>
-				<input type="button" id="backwards" value="<"></button>
+				<input type="button" id="backwards" class="direction" value="<"></button>
 				<input type="button" id="zero" class="number" value="0">
-				<button type="button" id="forwards" class="direction active">></button>
+				<button type="button" id="forwards" class="direction active" value=">"></button>
 			</br>
+			</div>
+			
+			<div class="control">
+			<p>Speed: 
+				<input type="text" id="speedDisplay" class="info speed" value="0" readonly>
+			</p>
+			<p>Address: 
+				<input type="text" id="AddressDisplay" class="info address" value="0" readonly>
+			</p>
+			
+			<p>Acceleration: 
+				<input type="text" id="AccelerationDisplay" class="info acceleration" value="0" readonly>
+			</p>
+			
+			<p>Deceleration: 
+				<input type="text" id="DecelerationDisplay" class="info deceleration" value="0" readonly>
+			</p>
 			
 			<input type="range" id="speed"  min="0" max="128" value="0" />
 			
 			<button type="button" class="button stop">STOP</button>
-           </div> 
+			</div>
+			
+			<div id="locos" class="locos menu">
+				<p>menu goes here</p>
+		    </div>
+			
+            </div>
        </div>
         
        <div class="tab">

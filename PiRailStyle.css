@@ -1,14 +1,14 @@
 .html, body {
-	width: 700px ;
+	width: 780px ;
 	margin-left: auto ;
 	margin-right: auto ;
+	background-color: grey;
 }
 
 .tabs {
     position: relative;   
-    min-height: 500px; 
+    min-height: 380px; 
     clear: both;
-    margin: 25px 0;
 }
 	
 .tab {
@@ -32,7 +32,7 @@
     position: absolute;
     top: 28px;
     left: 0;
-    background: white;
+    background: blue;
     right: 0;
     bottom: 0;
     padding: 20px;
@@ -47,6 +47,26 @@
 	
 [type=radio]:checked ~ label ~ .content {
     z-index: 1;
+}
+
+.keypad {
+	position: absolute;
+	left: 10px;
+	top: 20px;
+}
+
+.direction {
+	background-color: black;
+}
+
+.direction, active {
+	background-color: yellow;
+}
+
+.control {
+	position: absolute;
+	left: 260px;
+	top: 20px;
 }
 
 .value {
@@ -67,12 +87,14 @@
 .extra {
 	padding: 10px 32px;
 	font-size: 16px;
-	width: 170px;
+	width: 100px;
 	height: 40px;
+	text-align: center;
+	background-color: yellow;
 }
 
 .info {
-	background-color: lightblue;
+	background-color: blue;
 	border: 0px;
 	text-align: left;
 }
@@ -87,4 +109,17 @@
 
 .stop {
 	background-color: red;
+	height: 40px;
+	width: 100px;
+	position: absolute;
+	bottom: 40px;
+	
+}
+
+.menu {
+	position: absolute;
+	left: 520px;
+	width: 260px;
+	height: 340px;
+	overflow:scroll;
 }

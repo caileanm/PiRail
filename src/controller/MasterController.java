@@ -16,7 +16,6 @@ public class MasterController {
 	trainController cab;
 	LayoutController controlPanel;
 	DCCSerialCom Arduino;
-	CBUSCom CAN;
 	
 	public MasterController() throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException {
 		//Communication stuff here
@@ -29,10 +28,8 @@ public class MasterController {
 			System.exit(0);
 		}
 		
-		CAN = new CBUSCom();
-		
 		cab = new trainController(Arduino);
-		controlPanel = new LayoutController(Arduino, CAN);
+		controlPanel = new LayoutController(Arduino);
 		
 		//for testing
 		cab.sendCommand("spee 44 20");

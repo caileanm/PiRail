@@ -14,11 +14,9 @@ public class LayoutController {
 	
 	LayoutConfiguration CurrentLayout;
 	DCCSerialCom Arduino;
-	CBUSCom CBUS;
 	
-	LayoutController(DCCSerialCom connection, CBUSCom CAN) {
+	LayoutController(DCCSerialCom connection) {
 		Arduino = connection;
-		CBUS = CAN;
 	}
 	
 	public void saveConfiguration() throws FileNotFoundException {
