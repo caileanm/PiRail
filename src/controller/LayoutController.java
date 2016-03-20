@@ -31,7 +31,6 @@ public class LayoutController {
 		pw.close();
 	}
 	
-	//unset all after loading for synchronisation
 	public void loadConfiguration() throws NumberFormatException, IOException {
 		FileInputStream fstream = new FileInputStream("DCCAcc.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
@@ -41,9 +40,7 @@ public class LayoutController {
 			CurrentLayout.addDCCDecoder(Integer.parseInt(tokens[0]), tokens[1], Integer.parseInt(tokens[2]));
 		}
 		br.close();
-		
-		//more CBUS stuff goes here
-		
+
 		//for testing
 		System.out.println("File Loaded");
 	}

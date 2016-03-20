@@ -24,60 +24,66 @@
             </div>
 			
 			<br>
-				<input type="button" class="displaybutton" id="clear">clear</button>
-				<input type="button" class="displaybutton" id="enter">enter</button>
+				<input type="button" class="displaybutton button" id="clear" value="clear"></button>
+				<input type="button" class="displaybutton button enter" id="enter" value="enter"></button>
 			</br>
 			
 			<br>
-				<input type="button" id="address" class="button extra address" value="address"></button>
+				<input type="button" id="address" class="button extra addressbutton" value="address"></button>
                 <input type="button" id="seven" class="number" value="7">
                 <input type="button" id="eight" class="number" value="8">
                 <input type="button" id="nine" class="number" value="9">
             </br>
             <br>
-				<input type="button" id="acceleration" class="button extra deceleration" value="acceleration"></button>
+				<input type="button" id="acceleration" class="button extra accelerationbutton" value="acceleration"></button>
                 <input type="button" id="four" class="number" value="4">
                 <input type="button" id="five" class="number" value="5">
                 <input type="button" id="six" class="number" value="6">
             </br>
             <br>
-				<input type="button" id="deceleration" class="button extra deceleration" value="deceleration"></button>
+				<input type="button" id="deceleration" class="button extra decelerationbutton" value="deceleration"></button>
                 <input type="button" id="one" class="number" value="1">
                 <input type="button" id="two" class="number" value="2">
                 <input type="button" id="three" class="number" value="3">
             </br>
 			<br>
-				<input type="button" id="function" class="button extra function" value="function"></button>
-				<input type="button" id="backwards" class="direction" value="<"></button>
+				<input type="button" id="function" class="button extra functionbutton" value="function"></button>
+				<input type="button" id="backwards" class="button direction" value="<"></button>
 				<input type="button" id="zero" class="number" value="0">
-				<button type="button" id="forwards" class="direction active" value=">"></button>
+				<input type="button" id="forwards" class="button direction" value=">"></button>
 			</br>
 			</div>
 			
+			<div class="info">
+				<div class="col1">
+				<p class="speedlabel">Speed: </p>
+					<input type="text" id="speedDisplay" class="speed infodisplay" value="0" readonly>
+				<p class="addresslabel">Address: </p>
+					<input type="text" id="AddressDisplay" class="address infodisplay" value="0" readonly>
+				</div>
+				
+				<div class="col2">
+				<p class="accelerationlabel">Acceleration: </p>
+					<input type="text" id="AccelerationDisplay" class="acceleration infodisplay" value="0" readonly>
+				<p class="decelerationlabel">Deceleration: </p>
+					<input type="text" id="DecelerationDisplay" class="deceleration infodisplay" value="0" readonly>
+				</div>
+			</div>
+			
 			<div class="control">
-			<p>Speed: 
-				<input type="text" id="speedDisplay" class="info speed" value="0" readonly>
-			</p>
-			<p>Address: 
-				<input type="text" id="AddressDisplay" class="info address" value="0" readonly>
-			</p>
-			
-			<p>Acceleration: 
-				<input type="text" id="AccelerationDisplay" class="info acceleration" value="0" readonly>
-			</p>
-			
-			<p>Deceleration: 
-				<input type="text" id="DecelerationDisplay" class="info deceleration" value="0" readonly>
-			</p>
-			
-			<input type="range" id="speed"  min="0" max="128" value="0" />
-			
-			<button type="button" class="button stop">STOP</button>
+				<input type="range" id="throttle" class="throttle"  min="0" max="128" value="0" />
 			</div>
 			
 			<div id="locos" class="locos menu">
 				<p>menu goes here</p>
 		    </div>
+			
+			<div class="submenu">
+				<input type="button" class="button stop" value="STOP"></input>
+				<input type="button" class="button submenubutton save" value="save"></input>
+				<input type="button" class="button submenubutton add" value="+"></input>
+				<input type="button" class="button submenubutton remove" value="-"></input>
+			</div>
 			
             </div>
        </div>
@@ -88,6 +94,18 @@
            
            <div class="content">
                <p>Layout Control goes here</p>
+			   
+				<div id="accessories" class="accessories menu">
+					<p>menu goes here</p>
+				</div>
+				
+				<div class="submenu">
+					<input type="button" class="button stop" value="STOP"></input>
+					<input type="button" class="button submenubutton save" value="save"></input>
+					<input type="button" class="button submenubutton add" value="+"></input>
+					<input type="button" class="button submenubutton remove" value="-"></input>
+				</div>
+				
            </div> 
        </div>
         

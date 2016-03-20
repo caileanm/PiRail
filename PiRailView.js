@@ -12,7 +12,11 @@ function PiRailView() {
         nineButton = document.getElementById("nine"),
 		clearButton = document.getElementById("clear"),
         zeroButton = document.getElementById("zero"),
-		enterButton = document.getElementById("enter");
+		enterButton = document.getElementById("enter"),
+		addressButton = document.getElementByID("address"),
+		accelerationButton = document.getElementByID("acceleration"),
+		decelerationButton = document.getElementByID("deceleration"),
+		functionButton = document.getElementByID("function");
 		
 	this.showCurrentValue = function (value) {
         textvalue.value = value;
@@ -62,11 +66,23 @@ function PiRailView() {
         clearButton.addEventListener("click", callback);
     };
 	
-	this.setClearClickCallback = function (callback) {
-        clearButton.addEventListener("click", callback);
+	this.setEnterClickCallback = function (callback) {
+        enterButton.addEventListener("click", callback);
     };
 	
-	this.setSpeedChangeCallback = function (callback) {
-        clearButton.addEventListener("change", callback);
+	this.setAddressClickCallback = function (callback) {
+        addressButton.addEventListener("click", callback);
+    };
+	
+	this.setAccelerationClickCallback = function (callback) {
+        accelerationButton.addEventListener("click", callback);
+    };
+	
+	this.setDecelerationClickCallback = function (callback) {
+        decelerationButton.addEventListener("click", callback);
+    };
+	
+	this.setFunctionClickCallback = function (callback) {
+        functionButton.addEventListener("click", callback);
     };
 }

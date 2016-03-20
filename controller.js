@@ -4,7 +4,11 @@ function controller() {
 		view = new PiRailView(),
 		updateValueDisplay = function () {
 			view.showCurrentValue(model.getValue());
-		};
+		},
+		Address = true,
+		Acceleration = false,
+		Deceleration = false,
+		Function = false;
 	
 	this.init = function() {
 		updateValueDisplay();
@@ -64,6 +68,9 @@ function controller() {
 			view.showCurrentValue(model.getValue());
 		});
 		
+		view.setEnterCallBackFunction(function () {
+			//
+		}
 	};
 	
 }
