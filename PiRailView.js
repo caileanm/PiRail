@@ -1,6 +1,10 @@
 function PiRailView() {
 	
 	var textvalue = document.getElementById("val"),
+		speedvalue = document.getElementById("speedDisplay"),
+		addressvalue = document.getElementById("AddressDisplay"),
+		accelerationvalue = document.getElementById("AccelerationDisplay"),
+		decelerationvalue = document.getElementById("DecelerationDisplay"),
         oneButton = document.getElementById("one"),
         twoButton = document.getElementById("two"),
         threeButton = document.getElementById("three"),
@@ -13,15 +17,41 @@ function PiRailView() {
 		clearButton = document.getElementById("clear"),
         zeroButton = document.getElementById("zero"),
 		enterButton = document.getElementById("enter"),
-		addressButton = document.getElementByID("address"),
-		accelerationButton = document.getElementByID("acceleration"),
-		decelerationButton = document.getElementByID("deceleration"),
-		functionButton = document.getElementByID("function");
-		
+		addressButton = document.getElementById("address"),
+		accelerationButton = document.getElementById("acceleration"),
+		decelerationButton = document.getElementById("deceleration"),
+		functionButton = document.getElementById("function"),
+		throttleSlider = document.getElementById("throttle"),
+		stopButton = document.getElementById("stop"),
+		saveLocosButton = document.getElementById("savelocos"),
+		saveAccessoriesButton = document.getElementById("saveaccessories"),
+		addLocosButton = document.getElementById("addlocos"),
+		removeLocosButton = document.getElementById("removelocos"),
+		addAccessoryButton = document.getElementById("addaccessory"),
+		removeAccessoryButton = document.getElementById("removeaccessory");
+	
+	//update display values
 	this.showCurrentValue = function (value) {
         textvalue.value = value;
     };
 	
+	this.showCurrentSpeed = function (value) {
+		speedvalue.value = value;
+	};
+	
+	this.showCurrentAddress = function (value) {
+		addressvalue.value = value;
+	};
+	
+	this.showCurrentAcceleration = function (value) {
+		accelerationvalue.value = value;
+	};
+	
+	this.showCurrentDeceleration = function (value) {
+		decelerationvalue.value = value;
+	};
+	
+	//set Callback Functions
 	this.setOneClickCallback = function (callback) {
         oneButton.addEventListener("click", callback);
     };
@@ -85,4 +115,36 @@ function PiRailView() {
 	this.setFunctionClickCallback = function (callback) {
         functionButton.addEventListener("click", callback);
     };
+	
+	this.setThrottleReleaseCallback = function (callback) {
+		throttleSlider.addEventListener("change", callback);
+	};
+	
+	this.setStopClickCallback = function (callback) {
+		stopButton.addEventListener("click", callback);
+	};
+	
+	this.setSaveLocosClickCallback = function (callback) {
+		saveLocosButton.addEventListener("click", callback);
+	};
+	
+	this.setSaveAccessoriesClickCallback = function (callback) {
+		saveAccessoriesButton.addEventListener("click", callback);
+	};
+	
+	this.addLocosClickCallback = function (callback) {
+		addLocosButton.addEventListener("click", callback);
+	};
+	
+	this.removeLocosClickCallback = function (callback) {
+		removeLocosButton.addEventListener("click", callback);
+	};
+	
+	this.addAccessoryClickCallback = function (callback) {
+		addAccessoryButton.addEventListener("click", callback);
+	};
+	
+	this.removeAccessoryClickCallback = function (callback) {
+		removeAccessoryButton.addEventListener("click", callback);
+	};
 }

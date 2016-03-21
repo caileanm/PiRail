@@ -6,16 +6,9 @@ import java.util.List;
 public class LayoutConfiguration {
 	
 	List<DCCAccessory> DCCaccessories;
-	List<CBUSProducer> CBUSProducers;
-	List<CBUSConsumer> CBUSConsumers;
 	
 	public LayoutConfiguration() {
 		DCCaccessories = new ArrayList<DCCAccessory>();
-		CBUSProducers = new ArrayList<CBUSProducer>();
-		CBUSConsumers = new ArrayList<CBUSConsumer>();
-		
-		//Add the command station as CBUS producer with node number 0
-		CBUSProducers.add(new CBUSProducer(128, 0));
 	}
 	
 	//DCC
@@ -49,7 +42,10 @@ public class LayoutConfiguration {
 		return DCCaccessories.get(index).getFunction(function);
 	}
 	
-	//CBUS
+	//Implementation of the CBUS protocol is a planned feature in a future version
+	//of this software.
+	
+	/*CBUS
 	
 	public void addCBUSProducer(int cap, int node) {
 		CBUSProducers.add(new CBUSProducer(cap, node));
@@ -122,5 +118,5 @@ public class LayoutConfiguration {
 	public void changeConsumerState(int index, int output, boolean setting) {
 		CBUSConsumers.get(index).changeState(output, setting);
 	}
-	
+	*/
 }

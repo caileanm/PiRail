@@ -59,7 +59,7 @@
 .info {
 	position: absolute;
 	left: 260px;
-	top: 0px;
+	top: 130px;
 	width: 260px;
 }
 
@@ -208,8 +208,16 @@
 }
 
 input[type=range] {
-	-webkit-appearance: slider-vertical;
-	width: 140px;
+	width: 200px;
+	position: absolute;
+	bottom: 50px;
+	left: 20px;
+}
+
+.picture {
+	position: absolute;
+	left: 260px;
+	top: 0px;
 }
 
 .submenu {
@@ -224,6 +232,8 @@ input[type=range] {
 	height: 40px;
 	width: 65px;
 	font-size: 20px;
+	border-radius: 0px;
+	border-color: black;
 }
 
 .save {
@@ -246,6 +256,7 @@ input[type=range] {
 
 .stop {
 	background-color: red;
+	border-color: black;
 	font-size: 20px;
 	height: 40px;
 	width: 65px;
