@@ -79,7 +79,7 @@ function controller() {
 				model.setacceleration(model.getValue());
 				view.showCurrentAcceleration(model.getacceleration());
 			}
-			else {
+			else if (model.getDeceleration()) {
 				//send command to the back
 				model.setdeceleration(model.getValue());
 				view.showCurrentDeceleration(model.getdeceleration());
@@ -91,22 +91,22 @@ function controller() {
 		
 		view.setAddressClickCallback(function () {
 			model.setAddress();
-			//do something with the button
+			view.showAddress();
 		});
 		
 		view.setAccelerationClickCallback(function () {
 			model.setAcceleration();
-			//do something with the button
+			view.showAcceleration();
 		});
 		
 		view.setDecelerationClickCallback(function () {
 			model.setDeceleration();
-			//do something with the button
+			view.showDeceleration();
 		});
 		
 		view.setFunctionClickCallback(function () {
 			model.setFunction();
-			//do something with the button
+			view.showFunction();
 		});
 		
 		view.setThrottleReleaseCallback(function () {
@@ -114,7 +114,14 @@ function controller() {
 			view.showCurrentSpeed(model.getSpeed());
 		});
 		
-		view.setStopClickCallback(function () {
+		view.setStop1ClickCallback(function () {
+			//send command
+			document.getElementById("throttle").value = 0;
+			model.setSpeed(0);
+			view.showCurrentSpeed(model.getSpeed());
+		});
+		
+		view.setStop2ClickCallback(function () {
 			//send command
 			document.getElementById("throttle").value = 0;
 			model.setSpeed(0);
@@ -129,21 +136,71 @@ function controller() {
 			//send command
 		});
 		
-		view.addLocosClickCallback(function () {
-			//send command
+		view.setaddLocosClickCallback(function () {
+			view.new_loco();
 		});
 		
-		view.removeLocosClickCallback(function () {
-			//send command
+		view.setremoveLocosClickCallback(function () {
+			view.new_accesssory();
 		});
 		
-		view.addAccessoryClickCallback(function () {
+		view.setaddAccessoryClickCallback(function () {
 			//send command
+			//form
 		});
 		
-		view.removeAccessoryClickCallback(function () {
+		view.setremoveAccessoryClickCallback(function () {
 			//send command
+			//form
 		});
+		
+		view.setForwardClickCallback(function () {
+			//send command
+			model.setForward();
+			view.showDirection(model.getDirection());
+		});
+		
+		view.setBackwardClickCallback(function () {
+			//send command
+			model.setBackward();
+			view.showDirection(model.getDirection());
+		});
+		
+		view.setaddLocosClickCallback(function () {
+			view.new_loco();
+		});
+		
+		view.setaddAccessoryClickCallback(function () {
+			view.new_accessory();
+		});
+		
+		view.setCancelLocoClickCallback(function () {
+			view.cancel_loco();
+		});
+		
+		view.setCancelAccessoryClickCallback(function () {
+			view.cancel_accessory();
+		});
+		
+		view.setconfirmLocoClickCallback(function () {
+			if (true) {
+				//validate form
+				//send message
+				//update view
+				view.cancel_loco();
+			}
+		})
+		
+		view.setconfirmAccessoryClickCallback(function () {
+			if (true) {
+				//validate form
+				//send message
+				//update view
+				view.cancel_accessory();
+			}
+		})
+		
+		//get data from server to load everything initially
 	};
 	
 }

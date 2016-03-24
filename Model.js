@@ -9,7 +9,19 @@ function Model() {
 		Address = false,
 		Acceleration = false,
 		Deceleration = false,
-		Function = true;
+		Function = false;
+	
+	this.setForward = function () {
+		forward = true;
+	};
+	
+	this.setBackward = function () {
+		forward = false;
+	};
+	
+	this.getDirection = function () {
+		return forward;
+	};
 	
 	this.getValue = function () {
         return value;

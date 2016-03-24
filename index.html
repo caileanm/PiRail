@@ -55,7 +55,7 @@
 			</div>
 			
 			<div class="picture">
-				<img src="placeholder.png" id="vehicle">
+				<img src="images/steam1.png" id="vehicle" align="middle">
 			</div>
 			
 			<div class="info">
@@ -80,10 +80,12 @@
 			
 			<div id="locos" class="locos menu">
 				<p>menu goes here</p>
+				
+				
 		    </div>
 			
 			<div class="submenu">
-				<input type="button" id="stop" class="button stop" value="STOP"></input>
+				<input type="button" id="stop1" class="button stop" value="STOP"></input>
 				<input type="button" id="savelocos" class="button submenubutton save" value="save"></input>
 				<input type="button" id="addlocos" class="button submenubutton add" value="+"></input>
 				<input type="button" id="removelocos" class="button submenubutton remove" value="-"></input>
@@ -101,10 +103,13 @@
 			   
 				<div id="accessories" class="accessories menu">
 					<p>menu goes here</p>
+					
+					
+					
 				</div>
 				
 				<div class="submenu">
-					<input type="button" id="stop" class="button stop" value="STOP"></input>
+					<input type="button" id="stop2" class="button stop" value="STOP"></input>
 					<input type="button" id="saveaccessories" class="button submenubutton save" value="save"></input>
 					<input type="button" id="addaccessory" class="button submenubutton add" value="+"></input>
 					<input type="button" id="removeaccessory" class="button submenubutton remove" value="-"></input>
@@ -114,6 +119,39 @@
        </div>
         
     </div>
+	
+<div id="newLoco" class="popup">
+<form action="#" id="form" method="post" name="form">
+<h2 class="popupinput">New Vehicle</h2>
+<input id="name" name="name" placeholder="Name" class="popupinput loconame" type="text">
+<input id="address" name="address" placeholder="address" class="popupinput locoaddress" type="number">
+<input type="submit" id="confirmLoco" class="popupbutton confirm" value="Add"></input>
+<input type="button" id="cancelLoco" class="popupbutton cancel" value="Cancel"></input>
+<div class="imageselect">
+	
+</div>
+</form>
+</div>
+
+<div id="newAccessory" class="popup">
+<form action="#" id="form" method="post" name="form">
+<h2>New Accessory Decoder</h2>
+<input id="name" name="name" placeholder="Name" class="popupinput decodername" type="text">
+<input id="address" name="address" placeholder="address" class="popupinput decoderaddress" type="number">
+<input id="capacity" name="capacity" placeholder="capacity" class="popupinput capacity" type="number">
+<input type="submit" id="confirmAccessory" class="popupbutton confirm" value="Add"></input>
+<input type="button" id="cancelAccessory" class="popupbutton cancel" value="Cancel"></input>
+<div class="imageselect">
+	
+</div>
+</form>
+</div>
+
+<div id="confirm" class="smallpopup">
+<h2>Are you sure?</h2>
+<input type="button" id="yes" class="popupbutton" value="yes"></input>
+<input type="button" id="no" class="popupbutton" value="no"></input>
+</div>
 	
 </body>
 

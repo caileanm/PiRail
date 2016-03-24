@@ -22,13 +22,20 @@ function PiRailView() {
 		decelerationButton = document.getElementById("deceleration"),
 		functionButton = document.getElementById("function"),
 		throttleSlider = document.getElementById("throttle"),
-		stopButton = document.getElementById("stop"),
+		stopButton1 = document.getElementById("stop1"),
+		stopButton2 = document.getElementById("stop2"),
 		saveLocosButton = document.getElementById("savelocos"),
 		saveAccessoriesButton = document.getElementById("saveaccessories"),
 		addLocosButton = document.getElementById("addlocos"),
 		removeLocosButton = document.getElementById("removelocos"),
 		addAccessoryButton = document.getElementById("addaccessory"),
-		removeAccessoryButton = document.getElementById("removeaccessory");
+		removeAccessoryButton = document.getElementById("removeaccessory"),
+		forwardsButton = document.getElementById("forwards"),
+		backwardsButton = document.getElementById("backwards"),
+		cancelLoco = document.getElementById("cancelLoco"),
+		cancelAccessory = document.getElementById("cancelAccessory")
+		confirmLoco = document.getElementById("confirmLoco"),
+		confirmAccessory = document.getElementById("confirmAccessory");
 	
 	//update display values
 	this.showCurrentValue = function (value) {
@@ -50,6 +57,83 @@ function PiRailView() {
 	this.showCurrentDeceleration = function (value) {
 		decelerationvalue.value = value;
 	};
+	
+	this.showDirection = function (direction) {
+		if (direction) {
+			document.getElementById('forwards').style.backgroundColor = "yellow";
+			document.getElementById('forwards').style.color = "black";
+			document.getElementById('backwards').style.backgroundColor = "black";
+			document.getElementById('backwards').style.color = "white";
+		}
+		else {
+			document.getElementById('forwards').style.backgroundColor = "black";
+			document.getElementById('forwards').style.color = "white";
+			document.getElementById('backwards').style.backgroundColor = "yellow";
+			document.getElementById('backwards').style.color = "black";
+		}
+	};
+	
+	this.showAddress = function () {
+		document.getElementById("address").style.backgroundColor = "yellow";
+		document.getElementById("address").style.color = "black";
+		document.getElementById("acceleration").style.backgroundColor = "black";
+		document.getElementById("acceleration").style.color = "white";
+		document.getElementById("deceleration").style.backgroundColor = "black";
+		document.getElementById("deceleration").style.color = "white";
+		document.getElementById("function").style.backgroundColor = "black";
+		document.getElementById("function").style.color = "white";
+	};
+	
+	this.showAcceleration = function () {
+		document.getElementById("address").style.backgroundColor = "black";
+		document.getElementById("address").style.color = "white";
+		document.getElementById("acceleration").style.backgroundColor = "yellow";
+		document.getElementById("acceleration").style.color = "black";
+		document.getElementById("deceleration").style.backgroundColor = "black";
+		document.getElementById("deceleration").style.color = "white";
+		document.getElementById("function").style.backgroundColor = "black";
+		document.getElementById("function").style.color = "white";
+	};
+	
+	this.showDeceleration = function () {
+		document.getElementById("address").style.backgroundColor = "black";
+		document.getElementById("address").style.color = "white";
+		document.getElementById("acceleration").style.backgroundColor = "black";
+		document.getElementById("acceleration").style.color = "white";
+		document.getElementById("deceleration").style.backgroundColor = "yellow";
+		document.getElementById("deceleration").style.color = "black";
+		document.getElementById("function").style.backgroundColor = "black";
+		document.getElementById("function").style.color = "white";
+	};
+	
+	this.showFunction = function () {
+		document.getElementById("address").style.backgroundColor = "black";
+		document.getElementById("address").style.color = "white";
+		document.getElementById("acceleration").style.backgroundColor = "black";
+		document.getElementById("acceleration").style.color = "white";
+		document.getElementById("deceleration").style.backgroundColor = "black";
+		document.getElementById("deceleration").style.color = "white";
+		document.getElementById("function").style.backgroundColor = "yellow";
+		document.getElementById("function").style.color = "black";
+	};
+	
+	//show popups
+	this.new_loco = function () {
+		document.getElementById('newLoco').style.display = "block";
+	}
+	
+	this.new_accessory = function () {
+		document.getElementById('newAccessory').style.display = "block";
+	}
+	
+	//hide popups
+	this.cancel_loco = function () {
+		document.getElementById('newLoco').style.display = "none";
+	}
+	
+	this.cancel_accessory = function () {
+		document.getElementById('newAccessory').style.display = "none";
+	}
 	
 	//set Callback Functions
 	this.setOneClickCallback = function (callback) {
@@ -120,8 +204,12 @@ function PiRailView() {
 		throttleSlider.addEventListener("change", callback);
 	};
 	
-	this.setStopClickCallback = function (callback) {
-		stopButton.addEventListener("click", callback);
+	this.setStop1ClickCallback = function (callback) {
+		stopButton1.addEventListener("click", callback);
+	};
+	
+	this.setStop2ClickCallback = function (callback) {
+		stopButton2.addEventListener("click", callback);
 	};
 	
 	this.setSaveLocosClickCallback = function (callback) {
@@ -132,19 +220,43 @@ function PiRailView() {
 		saveAccessoriesButton.addEventListener("click", callback);
 	};
 	
-	this.addLocosClickCallback = function (callback) {
+	this.setaddLocosClickCallback = function (callback) {
 		addLocosButton.addEventListener("click", callback);
 	};
 	
-	this.removeLocosClickCallback = function (callback) {
+	this.setremoveLocosClickCallback = function (callback) {
 		removeLocosButton.addEventListener("click", callback);
 	};
 	
-	this.addAccessoryClickCallback = function (callback) {
+	this.setaddAccessoryClickCallback = function (callback) {
 		addAccessoryButton.addEventListener("click", callback);
 	};
 	
-	this.removeAccessoryClickCallback = function (callback) {
+	this.setremoveAccessoryClickCallback = function (callback) {
 		removeAccessoryButton.addEventListener("click", callback);
 	};
+	
+	this.setForwardClickCallback = function (callback) {
+		forwardsButton.addEventListener("click", callback);
+	};
+	
+	this.setBackwardClickCallback = function (callback) {
+		backwardsButton.addEventListener("click", callback);
+	};
+	
+	this.setCancelLocoClickCallback = function (callback) {
+		cancelLoco.addEventListener("click", callback);
+	}
+	
+	this.setCancelAccessoryClickCallback = function (callback) {
+		cancelAccessory.addEventListener("click", callback);
+	}
+	
+	this.setconfirmLocoClickCallback = function (callback) {
+		confirmLoco.addEventListener("click", callback);
+	}
+	
+	this.setconfirmAccessoryClickCallback = function (callback) {
+		confirmAccessory.addEventListener("click", callback);
+	}
 }

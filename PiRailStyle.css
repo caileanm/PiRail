@@ -19,9 +19,9 @@
     background: #eee; 
     padding: 10px; 
     border: 1px solid #ccc; 
-    margin-left: -1px; 
+    margin-left: -1px;
     position: relative;
-    left: 40px; 
+    left: 300px; 
 }
 	
 .tab [type=radio] {
@@ -185,7 +185,8 @@
 	width: 100px;
 	height: 40px;
 	text-align: center;
-	background-color: yellow;
+	background-color: black;
+	color: white;
 }
 
 .number {
@@ -273,4 +274,70 @@ input[type=range] {
 	height: 310px;
 	overflow:hidden;
 	background-color: #BDBDBD;
+}
+
+.popup {
+	display: none;
+	width: 520px;
+	height: 347px;
+	border: 2px solid;
+	background-color: lightblue;
+	z-index: 50;
+	position: absolute;
+	top: 36px;
+}
+
+.popupinput {
+	width: 150px;
+	height: 50px;
+	font-size: 20px;
+	position: absolute;
+	left: 20px;
+	border-radius:5px;
+}
+
+.loconame {
+	position: absolute;
+	top: 80px;
+}
+
+.locoaddress {
+	position: absolute;
+	top: 180px;
+}
+
+.decodername {
+	position: absolute;
+	top: 70px
+}
+
+.decoderaddress {
+	position: absolute;
+	top: 135px;
+}
+
+.capacity {
+	position: absolute;
+	top: 200px;
+}
+
+.popupbutton {
+	width: 60px;
+	height:40px;
+	border-radius:10px;
+	text-align: center;
+	padding: 0px;
+	position: absolute;
+	bottom: 30px;
+}
+
+.confirm {
+	position: absolute;
+	left: 20px;
+	background-color: green;
+}
+
+.cancel {
+	position: absolute;
+	left: 110px;
 }
