@@ -91,6 +91,25 @@
 				<input type="button" id="removelocos" class="button submenubutton remove" value="-"></input>
 			</div>
 			
+			<div id="newLoco" class="popup">
+				<form action="#" id="form" method="post" name="form">
+				<h2 class="popuptext">New Vehicle</h2>
+				<input id="name" name="name" placeholder="Name" class="popupinput loconame" type="text">
+				<input id="address" name="address" placeholder="address" class="popupinput locoaddress" type="number">
+				<input type="submit" id="confirmLoco" class="popupbutton confirm" value="Add"></input>
+				<input type="button" id="cancelLoco" class="popupbutton cancel" value="Cancel"></input>
+			<div class="imageselect">
+	
+			</div>
+			</form>
+			</div>
+			
+			<div id="confirmRemove1" class="smallpopup">
+				<h2 class="popuptext">Are you sure?</h2>
+				<input type="button" id="yes1" class="popupbutton yes" value="yes"></input>
+				<input type="button" id="no1" class="popupbutton no" value="no"></input>
+			</div>
+			
             </div>
        </div>
         
@@ -115,43 +134,31 @@
 					<input type="button" id="removeaccessory" class="button submenubutton remove" value="-"></input>
 				</div>
 				
+				<div id="newAccessory" class="popup">
+					<form action="#" id="form" method="post" name="form">
+					<h2 class="popuptext">New Accessory Decoder</h2>
+					<input id="name" name="name" placeholder="Name" class="popupinput decodername" type="text">
+					<input id="address" name="address" placeholder="address" class="popupinput decoderaddress" type="number">
+					<input id="capacity" name="capacity" placeholder="capacity" class="popupinput capacity" type="number">
+					<input type="submit" id="confirmAccessory" class="popupbutton confirm" value="Add"></input>
+					<input type="button" id="cancelAccessory" class="popupbutton cancel" value="Cancel"></input>
+					<div class="imageselect">
+	
+					</div>
+					</form>
+				</div>
+				
+				<div id="confirmRemove2" class="smallpopup">
+					<h2 class="popuptext">Are you sure?</h2>
+					<input type="button" id="yes2" class="popupbutton yes" value="yes"></input>
+					<input type="button" id="no2" class="popupbutton no" value="no"></input>
+				</div>
+				
            </div> 
        </div>
         
     </div>
-	
-<div id="newLoco" class="popup">
-<form action="#" id="form" method="post" name="form">
-<h2 class="popupinput">New Vehicle</h2>
-<input id="name" name="name" placeholder="Name" class="popupinput loconame" type="text">
-<input id="address" name="address" placeholder="address" class="popupinput locoaddress" type="number">
-<input type="submit" id="confirmLoco" class="popupbutton confirm" value="Add"></input>
-<input type="button" id="cancelLoco" class="popupbutton cancel" value="Cancel"></input>
-<div class="imageselect">
-	
-</div>
-</form>
-</div>
 
-<div id="newAccessory" class="popup">
-<form action="#" id="form" method="post" name="form">
-<h2>New Accessory Decoder</h2>
-<input id="name" name="name" placeholder="Name" class="popupinput decodername" type="text">
-<input id="address" name="address" placeholder="address" class="popupinput decoderaddress" type="number">
-<input id="capacity" name="capacity" placeholder="capacity" class="popupinput capacity" type="number">
-<input type="submit" id="confirmAccessory" class="popupbutton confirm" value="Add"></input>
-<input type="button" id="cancelAccessory" class="popupbutton cancel" value="Cancel"></input>
-<div class="imageselect">
-	
-</div>
-</form>
-</div>
-
-<div id="confirm" class="smallpopup">
-<h2>Are you sure?</h2>
-<input type="button" id="yes" class="popupbutton" value="yes"></input>
-<input type="button" id="no" class="popupbutton" value="no"></input>
-</div>
 	
 </body>
 

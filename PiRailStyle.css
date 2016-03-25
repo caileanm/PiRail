@@ -284,7 +284,26 @@ input[type=range] {
 	background-color: lightblue;
 	z-index: 50;
 	position: absolute;
-	top: 36px;
+	top: 0px;
+	left: 0px;
+}
+
+.popuptext {
+	font-size: 20px;
+	position: absolute;
+	left: 20px;
+}
+
+.smallpopup {
+	display: none;
+	width: 240px;
+	height: 160px;
+	border:2px solid;
+	background-color: lightblue;
+	z-index: 50;
+	position: absolute;
+	left: 140px;
+	top: 75px;
 }
 
 .popupinput {
@@ -340,4 +359,16 @@ input[type=range] {
 .cancel {
 	position: absolute;
 	left: 110px;
+}
+
+.yes {
+	position: absolute;
+	left: 40px;
+	background-color: green;
+}
+
+.no {
+	position: absolute;
+	left: 130px;
+	background-color: red;
 }

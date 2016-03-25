@@ -35,7 +35,11 @@ function PiRailView() {
 		cancelLoco = document.getElementById("cancelLoco"),
 		cancelAccessory = document.getElementById("cancelAccessory")
 		confirmLoco = document.getElementById("confirmLoco"),
-		confirmAccessory = document.getElementById("confirmAccessory");
+		confirmAccessory = document.getElementById("confirmAccessory"),
+		yes1 = document.getElementById("yes1"),
+		yes2 = document.getElementById("yes2"),
+		no1 = document.getElementById("no1"),
+		no2 = document.getElementById("no2");
 	
 	//update display values
 	this.showCurrentValue = function (value) {
@@ -126,6 +130,14 @@ function PiRailView() {
 		document.getElementById('newAccessory').style.display = "block";
 	}
 	
+	this.remove_loco = function () {
+		document.getElementById("confirmRemove1").style.display = "block";
+	}
+	
+	this.remove_accessory = function () {
+		document.getElementById("confirmRemove2").style.display = "block";
+	}
+	
 	//hide popups
 	this.cancel_loco = function () {
 		document.getElementById('newLoco').style.display = "none";
@@ -133,6 +145,14 @@ function PiRailView() {
 	
 	this.cancel_accessory = function () {
 		document.getElementById('newAccessory').style.display = "none";
+	}
+	
+	this.remove_loco_cancel = function () {
+		document.getElementById("confirmRemove1").style.display = "none";
+	}
+	
+	this.remove_accessory_cancel = function () {
+		document.getElementById("confirmRemove2").style.display = "none";
 	}
 	
 	//set Callback Functions
@@ -258,5 +278,21 @@ function PiRailView() {
 	
 	this.setconfirmAccessoryClickCallback = function (callback) {
 		confirmAccessory.addEventListener("click", callback);
+	}
+	
+	this.setconfirmRemoveLocoClickCallback = function (callback) {
+		yes1.addEventListener("click", callback);
+	}
+	
+	this.setcancelRemoveLocoClickCallback = function (callback) {
+		no1.addEventListener("click", callback);
+	}
+	
+	this.setconfirmRemoveAccessoryClickCallback = function (callback) {
+		yes2.addEventListener("click", callback);
+	}
+	
+	this.setcancelRemoveAccessoryClickCallback = function (callback) {
+		no2.addEventListener("click", callback);
 	}
 }

@@ -140,20 +140,6 @@ function controller() {
 			view.new_loco();
 		});
 		
-		view.setremoveLocosClickCallback(function () {
-			view.new_accesssory();
-		});
-		
-		view.setaddAccessoryClickCallback(function () {
-			//send command
-			//form
-		});
-		
-		view.setremoveAccessoryClickCallback(function () {
-			//send command
-			//form
-		});
-		
 		view.setForwardClickCallback(function () {
 			//send command
 			model.setForward();
@@ -198,6 +184,36 @@ function controller() {
 				//update view
 				view.cancel_accessory();
 			}
+		})
+		
+		view.setremoveLocosClickCallback(function () {
+			if (true) {
+				view.remove_loco();
+			}
+		})
+		
+		view.setremoveAccessoryClickCallback(function () {
+			if (true) {
+				view.remove_accessory();
+			}
+		})
+		
+		view.setconfirmRemoveLocoClickCallback(function () {
+			//do some stuff
+			view.remove_loco_cancel();
+		})
+		
+		view.setcancelRemoveLocoClickCallback(function () {
+			view.remove_loco_cancel();
+		})
+		
+		view.setconfirmRemoveAccessoryClickCallback(function () {
+			//do some stuff
+			view.remove_accessory_cancel();
+		})
+		
+		view.setcancelRemoveAccessoryClickCallback(function () {
+			view.remove_accessory_cancel();
 		})
 		
 		//get data from server to load everything initially
