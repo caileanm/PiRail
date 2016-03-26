@@ -18,7 +18,7 @@ public class MasterController {
 	DCCSerialCom Arduino;
 	
 	public MasterController() throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException {
-		//Communication stuff here
+		//Establish Connection to Arduino
 		Arduino = new DCCSerialCom();
 		if (Arduino.init()) {
 			System.out.println("Connection established");
@@ -28,11 +28,13 @@ public class MasterController {
 			System.exit(0);
 		}
 		
+		//Establish sub-controllers
 		cab = new trainController(Arduino);
 		controlPanel = new LayoutController(Arduino);
 		
 		//for testing
 		cab.sendCommand("spee 44 20");
 	}
+	
 	
 }

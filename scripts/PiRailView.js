@@ -295,4 +295,26 @@ function PiRailView() {
 	this.setcancelRemoveAccessoryClickCallback = function (callback) {
 		no2.addEventListener("click", callback);
 	}
+	
+	//The following are still to do
+	
+	this.showLocoInfo = function () {
+		
+	}
+	
+	this.showaccessoryInfo = function () {
+		
+	}
+	
+	this.init = function () {
+		
+	}
+	
+	this.checkNewLoco = function () {
+		
+	}
+	
+	this.checkNewAccessory = function () {
+		
+	}
 }

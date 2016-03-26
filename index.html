@@ -4,7 +4,7 @@
 <head>
 	<meta charset='UTF-8'>
 	<title>PiRail</title>
-	<link rel="stylesheet" type="text/css" href="PiRailStyle.css"/>
+	<link rel="stylesheet" type="text/css" href="css/PiRailStyle.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
@@ -55,7 +55,7 @@
 			</div>
 			
 			<div class="picture">
-				<img src="images/steam1.png" id="vehicle" align="middle">
+				<img src="" id="vehicle" class="image">
 			</div>
 			
 			<div class="info">
@@ -79,8 +79,6 @@
 			</div>
 			
 			<div id="locos" class="locos menu">
-				<p>menu goes here</p>
-				
 				
 		    </div>
 			
@@ -119,11 +117,12 @@
            
            <div class="content">
                <p>Layout Control goes here</p>
-			   
+				
+				<div id="nodes" class="nodes">
+					
+				</div>
+				
 				<div id="accessories" class="accessories menu">
-					<p>menu goes here</p>
-					
-					
 					
 				</div>
 				
@@ -162,8 +161,8 @@
 	
 </body>
 
-<script src="Model.js"></script>
-<script src="PiRailView.js"></script>
-<script src="controller.js"></script>
+<script src="scripts/Model.js"></script>
+<script src="scripts/PiRailView.js"></script>
+<script src="scripts/controller.js"></script>
 
 </html>

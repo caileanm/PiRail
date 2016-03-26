@@ -65,28 +65,31 @@ function controller() {
 		});
 		
 		view.setEnterClickCallback(function () {
-			//carry out command
-			if (model.getFunction()) {
-				//send command to the back
+			//check input is valid
+			if (model.checkValue(model.getValue())) {
+				
+				//carry out command
+				if (model.getFunction()) {
+					//send command to the back
+				}
+				else if (model.getAddress()) {
+					//send command to the back
+					model.setaddress(model.getValue());
+					view.showCurrentAddress(model.getaddress());
+				}
+				else if (model.getAcceleration()) {
+					//send command to the back
+					model.setacceleration(model.getValue());
+					view.showCurrentAcceleration(model.getacceleration());
+				}
+				else if (model.getDeceleration()) {
+					//send command to the back
+					model.setdeceleration(model.getValue());
+					view.showCurrentDeceleration(model.getdeceleration());
+				}
+				model.clear();
+				view.showCurrentValue(model.getValue());
 			}
-			else if (model.getAddress()) {
-				//send command to the back
-				model.setaddress(model.getValue());
-				view.showCurrentAddress(model.getaddress());
-			}
-			else if (model.getAcceleration()) {
-				//send command to the back
-				model.setacceleration(model.getValue());
-				view.showCurrentAcceleration(model.getacceleration());
-			}
-			else if (model.getDeceleration()) {
-				//send command to the back
-				model.setdeceleration(model.getValue());
-				view.showCurrentDeceleration(model.getdeceleration());
-			}
-			
-			model.clear();
-			view.showCurrentValue(model.getValue());
 		});
 		
 		view.setAddressClickCallback(function () {

@@ -6,6 +6,8 @@ public class DCCAccessory implements DCCDecoder{
 	int capacity;
 	String name;
 	boolean set[];
+	String image1[];
+	String image2[];
 	
 	public DCCAccessory(int Address, String Name, int cap) {
 		address = Address;
@@ -37,6 +39,14 @@ public class DCCAccessory implements DCCDecoder{
 	public boolean getFunction(int number) {
 		return set[number];
 	}
+	
+	public String getImage1(int number) {
+		return image1[number];
+	}
+	
+	public String getImage2(int number) {
+		return image2[number];
+	}
 
 	public int getCapacity() {
 		return capacity;
@@ -45,5 +55,5 @@ public class DCCAccessory implements DCCDecoder{
 	public String getName() {
 		return name;
 	}
-
+	
 }

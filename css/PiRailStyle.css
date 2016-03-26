@@ -283,6 +283,29 @@ input[type=range] {
 	background-color: #BDBDBD;
 }
 
+.menuitem {
+	width: 260px;
+	height: 80px;
+	background-color: red;
+	border: 1px solid;
+	position: absolute;
+	left: 0px;
+}
+
+.menuimage {
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	height: 70%;
+}
+
+.menutext {
+	position: absolute;
+	bottom: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
 .popup {
 	display: none;
 	width: 520px;

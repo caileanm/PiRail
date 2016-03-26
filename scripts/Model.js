@@ -115,4 +115,23 @@ function Model() {
 		value = "0";
 	};
 	
+	//check value is valid
+	this.checkValue = function (value) {
+		if (Address == true && value > 0 && value < 100) {
+			return true;
+		}
+		else if (Acceleration == true && value >= 0 && value < 256) {
+			return true;
+		}
+		else if (Deceleration == true && value >= 0 && value < 256) {
+			return true;
+		}
+		else if (Function == true && value >= 0 && value < 29) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 }
